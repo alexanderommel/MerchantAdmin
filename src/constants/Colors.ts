@@ -1,0 +1,8 @@
+export const medium_green = "#529930"
+export const soft_green = "#64C337"
+export const medium_black = "#3E3E3E"
+export const black = "#000000"
+export const strong_grey = "#414141"
+export const medium_grey = "#7B7B7B"
+export const soft_grey = "#F2F2F2"
+export const white = "#ffffff"
