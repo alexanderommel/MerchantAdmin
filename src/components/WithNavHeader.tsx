@@ -6,7 +6,9 @@ export default function (){
     return(
         <Box
             component={'header'}
-            sx={{display:"flex", flexDirection:"row", mb:"auto", pl:8, pr:4, py:2, backgroundColor:"#000000"}}
+            position={"fixed"}
+            width={1}
+            sx={{display:"flex", flexDirection:"row", mb:"auto", pl:8, pr:4, mr:10, py:2, backgroundColor:"#000000"}}
         >
             <Box
                 sx={{display:"flex", flexDirection:"row"}}
