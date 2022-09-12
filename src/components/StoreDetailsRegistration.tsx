@@ -13,7 +13,15 @@ import {
     Typography
 } from "@mui/material";
 
-export default function (){
+interface props{
+    onNextButtonClickedCallback: any
+}
+
+export default function ({onNextButtonClickedCallback}: props){
+
+    const onNextButtonClicked = () => {
+        onNextButtonClickedCallback()
+    }
 
     return(
         <Box sx={{ minHeight:"700px", display:"flex", flexDirection:"column", pt:"30px", pb:"40px" , pl:"100px", pr:"100px"}} >
@@ -52,14 +60,16 @@ export default function (){
                         <Select
                             labelId="demo-simple-select-helper-label"
                             id="demo-simple-select-helper"
-                            label="Age"
+                            label="Categoría"
                         >
                             <MenuItem value="">
                                 <em>None</em>
                             </MenuItem>
-                            <MenuItem value={10}>Ten</MenuItem>
-                            <MenuItem value={20}>Twenty</MenuItem>
-                            <MenuItem value={30}>Thirty</MenuItem>
+                            <MenuItem value={10}>Hamburguesas</MenuItem>
+                            <MenuItem value={20}>Comida Rápida</MenuItem>
+                            <MenuItem value={30}>Comida Tradicional</MenuItem>
+                            <MenuItem value={30}>Pizzas</MenuItem>
+                            <MenuItem value={30}>Heladería</MenuItem>
                         </Select>
                     </FormControl>
                     <Typography
@@ -98,6 +108,9 @@ export default function (){
                 <Button
                     sx={{py:1.5}}
                     variant={"contained"}
+                    onClick={() => {
+                        onNextButtonClicked()
+                    }}
                 >Siguiente</Button>
             </Stack>
         </Box>

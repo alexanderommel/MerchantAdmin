@@ -1,6 +1,6 @@
-import {GroupModifier, GroupModifierType} from "../interfaces/GroupModifier";
-import {Product, ProductStatus} from "../interfaces/Product";
-import {Store} from "../interfaces/Store";
+import {GroupModifier, GroupModifierType} from "../domain/GroupModifier";
+import {Product, ProductStatus} from "../domain/Product";
+import {Store} from "../domain/Store";
 
 export abstract class TestingDataProvider{
 

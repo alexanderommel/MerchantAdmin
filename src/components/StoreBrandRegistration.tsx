@@ -13,7 +13,17 @@ import {
     Typography
 } from "@mui/material";
 
-export default function () {
+interface props{
+    onSaveButtonClickedCallback: any
+}
+
+export default function ({onSaveButtonClickedCallback}: props) {
+
+
+
+    const onNextButtonClicked = () => {
+        onSaveButtonClickedCallback()
+    }
 
     const custom_sx = {py: 1.7, backgroundColor: medium_green}
     const styles = {
@@ -68,6 +78,9 @@ export default function () {
                 <Button
                     sx={{py: 1.5}}
                     variant={"contained"}
+                    onClick={() => {
+                        onNextButtonClicked()
+                    }}
                 >Siguiente</Button>
             </Stack>
         </Box>

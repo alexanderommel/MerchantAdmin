@@ -1,36 +1,21 @@
-import {Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar}
-    from "@mui/material";
-import InboxIcon from '@mui/icons-material/Inbox';
-import MailIcon from '@mui/icons-material/Mail';
-import StoreDetailsRegistration from "./StoreDetailsRegistration";
-import StoreBrandRegistration from "./StoreBrandRegistration";
-import LoginPassword from "./LoginPassword";
-import React, {useState} from "react";
+import {Box, Divider, Drawer, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Toolbar} from "@mui/material";
+import StoreCard from "./StoreCard";
+import Catalogue from "./Catalogue";
+import InboxIcon from "@mui/icons-material/Inbox";
+import MailIcon from "@mui/icons-material/Mail";
+import CreateProduct from "./CreateProduct";
+import ProductModifiers from "./ProductModifiers";
 
-interface props{
-    onStoreRegistrationSuccessfulCallback: any
-}
+export default function (){
 
-export default function ({onStoreRegistrationSuccessfulCallback}: props){
-
-    const drawerWidth = 240;
-
-    const onSaveButtonClickedCallback = () => {
-        onStoreRegistrationSuccessfulCallback()
-    }
-
-    const onNextButtonClickedCallback = () => {
-        let page_ = <StoreBrandRegistration onSaveButtonClickedCallback={onSaveButtonClickedCallback} />
-        setPage(page_)
-    }
-
-    let initialPage= <StoreDetailsRegistration onNextButtonClickedCallback={onNextButtonClickedCallback} />
-
-    const [page, setPage] = useState(initialPage);
+    const catalogue = (Catalogue())
+    const create_product = (CreateProduct())
+    const product_modifiers = (ProductModifiers())
+    const drawerWidth = 240
 
     return(
         <Box
-            sx={{display:"flex",mt:7}}>
+            sx={{display:"flex"}}>
             <Drawer
                 sx={{
                     width: drawerWidth,
@@ -45,9 +30,9 @@ export default function ({onStoreRegistrationSuccessfulCallback}: props){
                 anchor="left"
             >
                 <Toolbar />
-                <Divider />
+                <Divider  />
                 <List sx={{mt:2}}>
-                    {['Pasos'].map((text, index) => (
+                    {['Administración'].map((text, index) => (
                         <ListItem key={text} disablePadding>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -69,13 +54,16 @@ export default function ({onStoreRegistrationSuccessfulCallback}: props){
                     ))}
                 </List>
             </Drawer>
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
-            >
-                {page}
+            <Box display={"flex"} flexDirection={"column"}  sx={{mt:12, flexGrow:1}}>
+                <StoreCard/>
+                <Divider sx={{mt:1.5}} />
+                <Box
+                    component="main"
+                    sx={{  bgcolor: 'background.default', p: 4 }}
+                >
+                    {catalogue}
+                </Box>
             </Box>
         </Box>
     )
-
 }

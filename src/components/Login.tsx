@@ -1,10 +1,28 @@
 import {Box, Button, Container, TextField, Typography} from "@mui/material";
+import React, {useState} from "react";
 
-export default function (){
+interface props{
+    onLoginButtonClickedCallback: any
+}
+
+export default function ({onLoginButtonClickedCallback}:props){
+
+    const [email, setEmail] = useState("");
+    const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(event.target.value);
+    };
+
+    const onLoginButtonClicked = () => {
+        if (email===""){
+            console.log("Ingrese su email para continuar!")
+        }else{
+            onLoginButtonClickedCallback(email)
+        }
+    }
 
     return(
         <Container
-            sx={{my:"auto"}}
+            sx={{my:"auto", mt:12}}
             maxWidth={"sm"}>
             <Typography
                 variant={"h2"}
@@ -20,8 +38,15 @@ export default function (){
             <Typography variant={"subtitle1"} mb={1} color={"#707070"} >Correo electrónico</Typography>
             <TextField variant={"outlined"} fullWidth={true} placeholder={"Ingrese su email"}
                        sx={{mb:2}}
+                       value={email}
+                       onChange={handleEmailChange}
             ></TextField>
-            <Button variant={"contained"} fullWidth={true} sx={{py:1.5,backgroundColor:"#529930", mb:1}} >Siguiente</Button>
+            <Button variant={"contained"} fullWidth={true}
+                    sx={{py:1.5,backgroundColor:"#529930", mb:1}}
+                    onClick={() => {
+                        onLoginButtonClicked()
+                    }}
+            >Siguiente</Button>
             <Button variant={"contained"} fullWidth={true} sx={{py:1.5}} >Continuar con Google</Button>
         </Container>
     )

@@ -1,5 +1,5 @@
 import {Box, Grid, Typography} from "@mui/material";
-import {GroupModifier} from "../interfaces/GroupModifier";
+import {GroupModifier} from "../domain/GroupModifier";
 import {medium_green} from "../constants/Colors";
 
 interface props{
@@ -9,7 +9,7 @@ interface props{
 export default function ({group_modifier}: props ){
 
     return(
-        <Grid container xs={12} spacing={2} sx={{backgroundColor:medium_green, py:2 }} >
+        <Grid container xs={12} spacing={2} sx={{ py:2 }} >
             <Grid item xs={2} >
                 <Typography my={"auto"} >
                     {group_modifier.id}
