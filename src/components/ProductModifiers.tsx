@@ -19,12 +19,13 @@ export default function (){
             </Typography>
             <Button
                 startIcon={<AddIcon />}
+                size={"large"}
                 sx={{marginTop:2, paddingY: 1.2}}
                 variant="text">
                 Añadir nuevo modificador
             </Button>
             <Box
-                sx={{ backgroundColor:soft_grey, border: '1px dashed grey', marginTop:"12px"}}
+                sx={{ backgroundColor:soft_grey, border: '1px grey', marginTop:"12px", display: 'none'}}
             >
                 <Typography
                     color={medium_grey}
@@ -50,7 +51,7 @@ export default function (){
             <Button
                 fullWidth={true}
                 variant={"contained"}
-                sx={{ paddingY:1.2,marginTop:2 ,backgroundColor:medium_black}}
+                sx={{ paddingY:1.2,marginTop:4 ,backgroundColor:medium_black}}
             >
                 Guardar cambios
             </Button>
