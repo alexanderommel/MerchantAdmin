@@ -1,6 +1,7 @@
 import {GroupModifier, GroupModifierType} from "../domain/GroupModifier";
 import {Product, ProductStatus} from "../domain/Product";
 import {Store} from "../domain/Store";
+import {Modifier} from "../domain/Modifier";
 
 export abstract class TestingDataProvider{
 
@@ -19,31 +20,55 @@ export abstract class TestingDataProvider{
         return product
     }
 
+    public static getModifiers(groupModifier: GroupModifier): Modifier[]{
+        const modifiers = [
+            {
+                id: 1,
+                groupModifier: groupModifier,
+                name: "1.Carne asada",
+                price: 25.5
+            },
+            {
+                id: 1,
+                groupModifier: groupModifier,
+                name: "2.Carne término medio",
+                price: 25.5
+            },
+            {
+                id: 1,
+                groupModifier: groupModifier,
+                name: "3.Carne término blue",
+                price: 25.5
+            },
+            {
+                id: 1,
+                groupModifier: groupModifier,
+                name: "4.Carne roja",
+                price: 25.5
+            },
+        ] as Modifier[]
+        return modifiers
+    }
+
     public static getProductGroupModifiers(product: Product): GroupModifier[]{
         const groupModifiers = [
             {
                 id: 1,
                 product: product,
                 name: "Sabor de la salsa",
-                type: GroupModifierType.MANDATORY,
-                maximumActiveModifiers: 1,
-                minimumActiveModifiers: 2
+                type: GroupModifierType.MANDATORY
             },
             {
                 id: 2,
                 product: product,
                 name: "Tipo de asado",
-                type: GroupModifierType.OPTIONAL,
-                maximumActiveModifiers: 1,
-                minimumActiveModifiers: 2
+                type: GroupModifierType.OPTIONAL
             },
             {
                 id: 3,
                 product: product,
                 name: "Salsa extra",
-                type: GroupModifierType.OPTIONAL,
-                maximumActiveModifiers: 1,
-                minimumActiveModifiers: 2
+                type: GroupModifierType.OPTIONAL
             }
         ] as GroupModifier[];
         return groupModifiers

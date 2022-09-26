@@ -4,11 +4,9 @@ export interface GroupModifier{
     id: number,
     product: Product,
     name: string,
-    type: GroupModifierType,
-    maximumActiveModifiers: number,
-    minimumActiveModifiers: number
+    type: GroupModifierType
 }
 
 export enum GroupModifierType{
-    MANDATORY,OPTIONAL
+    MANDATORY="Obligatorio",OPTIONAL="Opcional"
 }

@@ -51,7 +51,7 @@ function App() {
     <div>
         <Box minHeight={'100vh'} display={"flex"} flexDirection={"column"} >
             <WithNavHeader userAuthenticated={false}/>
-            {page}
+            <Home></Home>
             <AboutFooter/>
         </Box>
     </div>

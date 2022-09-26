@@ -4,5 +4,5 @@ export interface Modifier{
     id: number,
     groupModifier: GroupModifier,
     name: string,
-    prince: number
+    price: number | null
 }

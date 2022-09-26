@@ -5,12 +5,14 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import MailIcon from "@mui/icons-material/Mail";
 import CreateProduct from "./CreateProduct";
 import ProductModifiers from "./ProductModifiers";
+import AddModifier from "./AddModifier";
 
 export default function (){
 
     const catalogue = (Catalogue())
     const create_product = (CreateProduct())
     const product_modifiers = (ProductModifiers())
+    const add_modifiers = (AddModifier())
     const drawerWidth = 240
 
     return(
@@ -61,7 +63,7 @@ export default function (){
                     component="main"
                     sx={{  bgcolor: 'background.default', p: 4 }}
                 >
-                    {catalogue}
+                    {product_modifiers}
                 </Box>
             </Box>
         </Box>
