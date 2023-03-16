@@ -6,7 +6,7 @@ function TongueCopyright() {
         <Typography variant="caption" color="#ffffff" mr={"auto"} >
             {'Copyright © '}
             <Link color="inherit" href="https://mui.com/">
-                Tongue Services
+                Alejandro
             </Link>{' '}
             {new Date().getFullYear()}
             {'.'}
