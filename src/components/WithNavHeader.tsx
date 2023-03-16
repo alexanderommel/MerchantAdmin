@@ -34,8 +34,8 @@ export default function ({userAuthenticated}:props){
                 sx={{display:"flex", flexDirection:"row"}}
                 mr={"auto"}
             >
-                <Typography variant={"h5"} display="inline" color={"#ffffff"} >Tongue </Typography>
-                <Typography variant={"h5"} color={"#6ac53c"} display="inline" >&nbsp;for Merchants</Typography>
+                <Typography variant={"h5"} display="inline" color={"#ffffff"} >Proyecto </Typography>
+                <Typography variant={"h5"} color={"#6ac53c"} display="inline" >&nbsp;for Apps Web</Typography>
             </Box>
             {activeButton}
             <IconButton sx={{justifyContent:"flex-end", color:"#ffffff" }} >
